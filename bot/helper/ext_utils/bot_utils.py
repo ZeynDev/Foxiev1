@@ -173,7 +173,7 @@ def get_readable_message():
             msg += f"\n⇲ <code>Task   </code>: <a href='{download.message.link}'>{download.extra_details['mode']}</a>"
         msg += f"\n⇲ <code>User   </code>: {tag}"
         msg += f"\n⚠️ /{BotCommands.CancelMirror}_{download.gid()}\n\n"
-        msg += f"<b>➔ Powered By :</b> @EritsuCH"
+        msg += f"<b>➔ Powered By :</b> @EritsuCH \n"
     if len(msg) == 0:
         return None, None
     def convert_speed_to_bytes_per_second(spd):
