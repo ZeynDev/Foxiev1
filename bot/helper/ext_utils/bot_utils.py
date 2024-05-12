@@ -115,8 +115,8 @@ def get_progress_bar_string(pct):
         pct = float(pct.strip('%'))
     p = min(max(pct, 0), 100)
     cFull = int(p // 10)
-    p_str = '⬤' * cFull
-    p_str += '〇' * (10 - cFull)
+    p_str = '●' * cFull
+    p_str += '◦' * (10 - cFull)
     return f"{p_str}"
 
 
@@ -143,7 +143,7 @@ def get_readable_message():
         if download.status() not in [MirrorStatus.STATUS_SEEDING, MirrorStatus.STATUS_PAUSED,
                                      MirrorStatus.STATUS_QUEUEDL, MirrorStatus.STATUS_QUEUEUP]:
             msg += f" » {download.speed()}"
-            msg += f"\n⇲ {get_progress_bar_string(download.progress())} » {download.progress()}"
+            msg += f"\n⇲『 {get_progress_bar_string(download.progress())} 』» <b>(</b> {download.progress()} <b>)</b>"
             msg += f"\n⇲ <code>SELESAI</code>: {download.processed_bytes()} of {download.size()}"
             msg += f"\n⇲ <code>ETA    </code>: {download.eta()}"
             msg += f"\n⇲ <code>Past   </code>: {get_readable_time(elapsed)}"
