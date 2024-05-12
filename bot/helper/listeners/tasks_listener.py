@@ -401,7 +401,7 @@ class MirrorLeechListener:
             await DbManager().rm_complete_task(self.message.link)
         self.seed = False if config_dict['DISABLE_SEED'] else self.seed
         LOGGER.info(f'Done Uploading {name}')
-        lmsg = f'<b><i>{escape(name)}</i></b>'
+        lmsg = f'<b>{escape(name)}</b>'
         lmsg += f'\n<b>cc</b>: <i>{self.tag}</i>'
         gmsg = f'Hey <b>{self.tag}</b>!\nYour job is done.'
         msg = f'\n\n<code>Size            </code>: {get_readable_file_size(size)}'
